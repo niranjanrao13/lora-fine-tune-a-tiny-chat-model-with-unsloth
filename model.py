@@ -74,8 +74,10 @@ def count_trainable_parameters(model):
     
     return int(count_)
 
-# Step 8 - trainable_fraction (not yet solved)
-# TODO: implement
+# Step 8 - trainable_fraction
+import numpy as np
+def trainable_fraction(trainable_count, total_count):
+    return (trainable_count / total_count)
 
 # Step 9 - build_instruction_examples (not yet solved)
 # TODO: implement
