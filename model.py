@@ -63,8 +63,16 @@ def attach_lora_adapters(model, r=8, lora_alpha=16, target_modules=None):
     # TODO: wrap `model` with LoRA via FastLanguageModel.get_peft_model using r, lora_alpha, target_modules
     return FastLanguageModel.get_peft_model(model=model, r=r, lora_alpha=lora_alpha, target_modules = get_lora_target_modules() if target_modules is None else target_modules)
 
-# Step 7 - count_trainable_parameters (not yet solved)
-# TODO: implement
+# Step 7 - count_trainable_parameters
+import numpy as np
+def count_trainable_parameters(model):
+    """Return the number of trainable parameters in `model`."""
+    count_ = 0
+    for param in model.parameters():
+        if param.requires_grad:
+            count_ += np.prod(param.size())
+    
+    return int(count_)
 
 # Step 8 - trainable_fraction (not yet solved)
 # TODO: implement
