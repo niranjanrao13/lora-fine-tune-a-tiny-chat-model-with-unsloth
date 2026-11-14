@@ -79,8 +79,36 @@ import numpy as np
 def trainable_fraction(trainable_count, total_count):
     return (trainable_count / total_count)
 
-# Step 9 - build_instruction_examples (not yet solved)
-# TODO: implement
+# Step 9 - build_instruction_examples
+def build_instruction_examples():
+    """Return a small list of {'instruction', 'response'} dicts for SFT."""
+    sft_data = [
+    {
+        "instruction": "What is the difference between supervised and unsupervised learning?",
+        "response": "Supervised learning uses labelled data to train a model to predict known outcomes, such as classifying emails as spam or not spam. Unsupervised learning works with unlabelled data to discover hidden patterns or structures, such as grouping customers based on purchasing behaviour."
+    },
+    {
+        "instruction": "Explain why the sky appears blue.",
+        "response": "The sky appears blue because of Rayleigh scattering. When sunlight enters the atmosphere, shorter wavelengths of light, particularly blue, are scattered more strongly by air molecules than longer wavelengths such as red. This scattered blue light reaches our eyes from different directions, making the sky appear blue."
+    },
+    {
+        "instruction": "Write a Python function to check whether a number is prime.",
+        "response": "def is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True"
+    },
+    {
+        "instruction": "What are the advantages of regular physical exercise?",
+        "response": "Regular physical exercise improves cardiovascular health, strengthens muscles and bones, supports mental well-being, improves sleep quality, and helps maintain a healthy body weight. It can also reduce the risk of chronic diseases such as diabetes and hypertension."
+    },
+    {
+        "instruction": "Summarise the concept of opportunity cost.",
+        "response": "Opportunity cost is the value of the next-best alternative that is sacrificed when a decision is made. For example, if someone spends an evening studying instead of working a paid shift, the opportunity cost includes the wages they could have earned."
+    },
+    {
+        "instruction": "Translate the following sentence into French: 'I would like a glass of water.'",
+        "response": "Je voudrais un verre d'eau."
+    },
+    ]
+    return sft_data
 
 # Step 10 - format_instruction_example (not yet solved)
 # TODO: implement
